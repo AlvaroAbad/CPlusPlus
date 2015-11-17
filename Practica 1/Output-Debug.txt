@@ -1,0 +1,19 @@
+﻿'Practica 1.exe' (Win32): Loaded 'D:\nube\Google Drive\Master\C++\Sesiones\sesion_1\Practica 1\Debug\Practica 1.exe'. Symbols loaded.
+'Practica 1.exe' (Win32): Loaded 'C:\Windows\syswow64\ntdll.dll'. Cannot find or open the PDB file.
+'Practica 1.exe' (Win32): Loaded 'C:\Windows\syswow64\kernel32.dll'. Cannot find or open the PDB file.
+'Practica 1.exe' (Win32): Loaded 'C:\Windows\syswow64\KernelBase.dll'. Cannot find or open the PDB file.
+'Practica 1.exe' (Win32): Loaded 'C:\Windows\syswow64\apphelp.dll'. Cannot find or open the PDB file.
+'Practica 1.exe' (Win32): Loaded 'C:\Windows\syswow64\vcruntime140d.dll'. Cannot find or open the PDB file.
+'Practica 1.exe' (Win32): Loaded 'C:\Windows\syswow64\ucrtbased.dll'. Cannot find or open the PDB file.
+'Practica 1.exe' (Win32): Loaded 'C:\Windows\syswow64\advapi32.dll'. Cannot find or open the PDB file.
+'Practica 1.exe' (Win32): Loaded 'C:\Windows\syswow64\msvcrt.dll'. Cannot find or open the PDB file.
+'Practica 1.exe' (Win32): Loaded 'C:\Windows\syswow64\sechost.dll'. Cannot find or open the PDB file.
+'Practica 1.exe' (Win32): Loaded 'C:\Windows\syswow64\rpcrt4.dll'. Cannot find or open the PDB file.
+'Practica 1.exe' (Win32): Loaded 'C:\Windows\syswow64\sspicli.dll'. Cannot find or open the PDB file.
+'Practica 1.exe' (Win32): Loaded 'C:\Windows\syswow64\cryptbase.dll'. Cannot find or open the PDB file.
+'Practica 1.exe' (Win32): Loaded 'C:\Windows\syswow64\bcryptprimitives.dll'. Cannot find or open the PDB file.
+'Practica 1.exe' (Win32): Loaded 'C:\Windows\syswow64\kernel.appcore.dll'. Cannot find or open the PDB file.
+The thread 0x3304 has exited with code 0 (0x0).
+The thread 0x2cd4 has exited with code 0 (0x0).
+The thread 0x39a0 has exited with code 0 (0x0).
+The program '[0x3968] Practica 1.exe' has exited with code 0 (0x0).
