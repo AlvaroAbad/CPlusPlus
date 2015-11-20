@@ -3,7 +3,7 @@
 class XWing : public SpaceShip {
 public:
 	XWing(int serialNumber);
-	void launch(unsigned short int posX, unsigned short int posY);
+	void launch( short int posX,  short int posY);
 	virtual void paint();
-	virtual void move(std::list<SpaceShip> *);
+	virtual void move(std::list<SpaceShip *> *);
 };

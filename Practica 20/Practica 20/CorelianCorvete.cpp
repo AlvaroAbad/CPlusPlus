@@ -6,12 +6,12 @@ CorelianCorvete::CorelianCorvete(int serialNumber)
 	this->serialnumber = serialNumber;
 }
 
-void CorelianCorvete::launch(unsigned short int posX, unsigned short int posY)
+void CorelianCorvete::launch( short int posX,  short int posY)
 {
 
 	unsigned seed = static_cast<unsigned int>(std::chrono::system_clock::now().time_since_epoch().count());
 	std::default_random_engine generator(seed);
-	std::uniform_int_distribution<short int> distribution(1, 100);
+	std::uniform_int_distribution<unsigned short int> distribution(1, 100);
 	this->posX = posX;
 	this->posY = posY;
 	this->life = distribution(generator);
@@ -39,7 +39,7 @@ void CorelianCorvete::paint()
 	}
 }
 
-void CorelianCorvete::move(std::list<SpaceShip>*)
+void CorelianCorvete::move(std::list<SpaceShip *>*)
 {
 	unsigned int distanceToClosestHBorder;
 	unsigned int distanceToClosestVBorder;

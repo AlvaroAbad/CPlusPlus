@@ -1,7 +1,3 @@
-// TOMAS: Muy bien la práctcica :-).
-// TOMAS: Los cpp me generan muchos warnings cuando pongo el nivel de warnings a máximo nivel.
-// ALVARO: se me habia olvidarlo deshabilitarlos en el console tambien, y por alguna razon no me salian si no buildeo teniendo la pestaña de console.h activa
-//
 #pragma warning(disable: 4820) //warning in various external files
 #pragma warning(disable: 4548) //warning in malloc.h
 #pragma warning(disable: 4668) // warning in processthreadsapi.h
@@ -23,7 +19,7 @@
 
 int main(int, char*)
 {
-	std::list<SpaceShip> * spaceShips= new std::list<SpaceShip>(); // pointer to all spaceships
+	std::list<SpaceShip *> * spaceShips= new std::list<SpaceShip *>(); // pointer to all spaceships
 	int serialNumber = 0;
 	hidecursor();
 	//Random Generator//
@@ -39,29 +35,34 @@ int main(int, char*)
 			serialNumber++;
 			switch (distribution(generator) % 4) {
 			case 0:
-				spaceShips->push_back(*(new DarthVader(serialNumber)));
+				spaceShips->push_back(new DarthVader(serialNumber));
 				break;
 			case 1:
-				spaceShips->push_back(*(new TIEFighter(serialNumber)));
+				spaceShips->push_back(new TIEFighter(serialNumber));
 				break;
 			case 2:
-				spaceShips->push_back(*(new XWing(serialNumber)));
+				spaceShips->push_back(new XWing(serialNumber));
 				break;
 			case 3:
-				spaceShips->push_back(*(new CorelianCorvete(serialNumber)));
+				spaceShips->push_back(new CorelianCorvete(serialNumber));
 				break;
 			}
-			spaceShips->end()->launch(distribution(generator), distribution(generator));
+			spaceShips->back()->launch(distribution(generator), distribution(generator));
 		}
 		//---------------------------//
-		std::list<SpaceShip>::iterator it = spaceShips->begin();
-		for (std::list<SpaceShip>::iterator it = spaceShips->begin(); it != spaceShips->end(); ++it)//cicle through SpaceShips
+		int life;
+		std::list<SpaceShip *>::iterator it = spaceShips->begin();
+		while (it != spaceShips->end())//cicle through SpaceShips
 		{
-			it->paint();
-			it->move(spaceShips);
-			it->updateLife();
-			if (it->getLife() == 0) {
-				spaceShips->remove(*it);
+			(*it)->paint();
+			(*it)->move(spaceShips);
+			(*it)->updateLife();
+			life = (*it)->getLife();
+			if ((*it)->getLife() == 0) {
+				it=spaceShips->erase(it);
+			}
+			else {
+				++it;
 			}
 		}
 		Sleep(50);
