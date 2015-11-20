@@ -1,3 +1,5 @@
+#pragma warning(disable:4514)
+#pragma warning(disable:4710)
 #include "LinkList.h"
 
 TList::TList()
@@ -10,6 +12,10 @@ TList::TList()
 
 TList::TList(TList & obj)
 {
+	this->lastNode = nullptr;
+	this->selectedNode = nullptr;
+	this->firstNode = nullptr;
+	this->listSize = 0;
 	if (obj.firstNode) {
 		this->push(obj.firstNode);
 		ListableInterface * aux = obj.firstNode->getNext();
@@ -17,12 +23,6 @@ TList::TList(TList & obj)
 			this->push(aux);
 			aux = aux->getNext();
 		}
-	}
-	else {
-		this->lastNode = nullptr;
-		this->selectedNode = nullptr;
-		this->firstNode = nullptr;
-		this->listSize = 0;
 	}
 
 }

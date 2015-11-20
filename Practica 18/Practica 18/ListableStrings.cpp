@@ -1,3 +1,5 @@
+#pragma warning(disable:4514)
+#pragma warning(disable:4710)
 #include "ListableStrings.h"
 
 ListableStrings::ListableStrings()
@@ -11,11 +13,11 @@ ListableStrings::~ListableStrings()
 	free(this->string);
 }
 
-void ListableStrings::setString(const char * string)
+void ListableStrings::setString(const char * usrString)
 {
-	unsigned int len=strlen(string);
+	unsigned int len=strlen(usrString);
 	this->string = static_cast<char*>(malloc(len + 1));
-	strcpy(this->string, string);
+	strcpy(this->string, usrString);
 }
 
 const char * ListableStrings::getString()

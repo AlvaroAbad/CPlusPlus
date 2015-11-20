@@ -1,3 +1,5 @@
+#pragma warning(disable:4514)
+#pragma warning(disable:4710)
 #include "LinkList.h"
 #include "ListableStrings.h"
 int main(int, char[]) {
@@ -14,11 +16,11 @@ int main(int, char[]) {
 	third->setString("Third");
 	stringList->push(third);
 	printf("%u\n", stringList->size());
-	ListableStrings * firstPoP= reinterpret_cast<ListableStrings *>(stringList->pop());
+	ListableStrings * firstPoP= static_cast<ListableStrings *>(stringList->pop());
 	printf("POP: %s\n", firstPoP->getString());
 	for (size_t i = 0; i < stringList->size(); i++)
 	{
-		printf("Next: %s\n", reinterpret_cast<ListableStrings *>(stringList->next())->getString());
+		printf("Next: %s\n", static_cast<ListableStrings *>(stringList->next())->getString());
 	}
 	getchar();
 }
