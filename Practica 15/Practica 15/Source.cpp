@@ -1,3 +1,6 @@
+#pragma warning(disable: 4514)
+#pragma warning(disable: 4189)
+#pragma warning(disable: 4710)
 #include <stdio.h>
 // ***********************************************************
 class CBase
