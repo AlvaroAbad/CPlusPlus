@@ -10,6 +10,11 @@ TList::TList()
 
 TList::TList(TList & obj)
 {
+	printf("Coping List\n");
+	this->lastNode = nullptr;
+	this->selectedNode = nullptr;
+	this->firstNode = nullptr;
+	this->listSize = 0;
 	if (obj.firstNode) {
 		this->push(obj.firstNode->getString());
 		TListNode * aux = obj.firstNode->getNext();
@@ -18,13 +23,6 @@ TList::TList(TList & obj)
 			aux = aux->getNext();
 		}
 	}
-	else {
-		this->lastNode = nullptr;
-		this->selectedNode = nullptr;
-		this->firstNode = nullptr;
-		this->listSize = 0;
-	}
-
 }
 
 unsigned int TList::size()
@@ -124,9 +122,8 @@ char * TListNode::getString()
 void TListNode::setString(const char * pString)
 {	
 	unsigned int len = static_cast<unsigned int>(strlen(pString)) + 1;
-	char * tmpString = static_cast<char *>(malloc(len));
-	strcpy_s(tmpString,len, pString);
-	this->string = tmpString;
+	this->string = static_cast<char *>(malloc(len));
+	strcpy_s(this->string,len, pString);
 }
 
 TListNode * TListNode::getNext()

@@ -50,9 +50,8 @@ namespace fileOperators {
 			free(buffer);
 			return total;
 		}
-		TList * getnumbers(Archivo * file)
+		void getnumbers(Archivo * file, TList * list)
 		{
-			TList * list = new TList();
 			fseek(file->file, 0, SEEK_END);
 			long fileSize = ftell(file->file);
 			rewind(file->file);
@@ -75,7 +74,6 @@ namespace fileOperators {
 				i = -1;
 			}
 			free(buffer);
-			return list;
 		}
 	}
 }

@@ -3,9 +3,9 @@
 
 int main(int, char *) {
 	fileOperators::Archivo * file;
-	TList * list;
+	TList * list = new TList();;
 	file= fileOperators::openFile("Prueba.txt","r");
-	list=fileOperators::fileUtilities::getnumbers(file);
+	fileOperators::fileUtilities::getnumbers(file, list);
 	list->toString();
 	fileOperators::closeFile(file);
 	getchar();
