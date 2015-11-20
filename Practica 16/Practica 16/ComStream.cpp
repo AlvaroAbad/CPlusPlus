@@ -1,3 +1,5 @@
+#pragma warning(disable:4514)
+#pragma warning(disable:4710)
 #include "ComStream.h"
 
 CComStream::CComStream(const char * COMPort)
@@ -29,6 +31,6 @@ int CComStream::read(void * buffer, unsigned int size)
 
 int CComStream::write(void * buffer, unsigned int size)
 {
-	printf("writing first %u chars from '%s' into serial COM port %s", size, buffer, this->COMPort);
+	printf("writing first %u chars from '%s' into serial COM port %s", size, static_cast<char *>(buffer), this->COMPort);
 	return 0;
 }

@@ -1,3 +1,5 @@
+#pragma warning(disable:4514)
+#pragma warning(disable:4710)
 #include "FileStream.h"
 #include "TcpStream.h"
 #include "ComStream.h"

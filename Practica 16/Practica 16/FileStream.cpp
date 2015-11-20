@@ -1,3 +1,5 @@
+#pragma warning(disable:4514)
+#pragma warning(disable:4710)
 #include "FileStream.h"
 
 CFileStream::CFileStream(const char * fileName)
@@ -29,6 +31,6 @@ int CFileStream::read(void * buffer, unsigned int size)
 
 int CFileStream::write(void * buffer, unsigned int size)
 {
-	printf("writing first %u chars from '%s' into %s", size, buffer, this->filename);
+	printf("writing first %u chars from '%s' into %s", size, static_cast<char *>(buffer), this->filename);
 	return 0;
 }

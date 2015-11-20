@@ -3,8 +3,7 @@
 class CStream
 {
 public:
-	CStream();
-	virtual ~CStream();
+	virtual ~CStream() {}
 	// Open Stream
 	virtual int open() = 0;
 	// Close Stream

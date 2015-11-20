@@ -1,3 +1,5 @@
+#pragma warning(disable:4514)
+#pragma warning(disable:4710)
 #include "TcpStream.h"
 
 CTcpStream::CTcpStream(char* ip,unsigned int port)
@@ -30,6 +32,6 @@ int CTcpStream::read(void * buffer, unsigned int size)
 
 int CTcpStream::write(void * buffer, unsigned int size)
 {
-	printf("writing first %u chars from '%s' into %s:%u", size, buffer, this->ip,this->port);
+	printf("writing first %u chars from '%s' into %s:%u", size, static_cast<char *>(buffer), this->ip,this->port);
 	return 0;
 }
