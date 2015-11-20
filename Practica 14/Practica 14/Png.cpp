@@ -19,6 +19,7 @@ int CPng::SetImageFile()
 
 void CPng::removeAlpha()
 {
+	printf("Removing Alpha\n");
 	this->m_uColorBytes &= 0xFFFFFF00;
 }
 

@@ -1,5 +1,7 @@
 #pragma once
 #pragma warning(disable: 4996)
+#pragma warning(disable:4514)
+#pragma warning(disable:4710)
 enum TType{ Tjpg = 1, Tpng = 2 };
 class CImagen
 {

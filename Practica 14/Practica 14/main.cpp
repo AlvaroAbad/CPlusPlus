@@ -7,7 +7,7 @@ void removeAlphas(CImagen ** images, const unsigned int size) {
 	for (size_t i = 0; i < size; i++)
 	{
 		if (images[i]->getType() == Tpng) {
-			reinterpret_cast<CPng *>(images[i])->removeAlpha();
+			static_cast<CPng *>(images[i])->removeAlpha();
 		}
 	}
 }
