@@ -52,27 +52,48 @@ namespace fileOperators {
 		}
 		void getnumbers(Archivo * file, TList * list)
 		{
+			void * buffer;
+			unsigned int charsToRead;
+			unsigned int CharsRead = 0;
+			bool remainingFileToread = true;
 			fseek(file->file, 0, SEEK_END);
 			long fileSize = ftell(file->file);
 			rewind(file->file);
-			void * buffer = malloc(sizeof(char) * (fileSize + 1));
-			int i = -1;
-			readFile(buffer, static_cast<unsigned int>(fileSize), file);
-			char * match = static_cast<char *>(buffer) - 1;
-			while ((match = strstr((match + 1), ",")) != 0) {
-				strncpy(match, "\0", 1);
-				while (match[i] != '\0' && (match + i) > static_cast<char *>(buffer)) {
-					i--;
+			if (fileSize < 128) {
+				buffer = malloc(sizeof(char) * (fileSize + 1));
+				charsToRead = fileSize;
+			}
+			else {
+				buffer = malloc(sizeof(char) * (128 + 1));
+				charsToRead = 128;
+			}
+			char * match = static_cast<char *>(buffer);
+			char * lastmatch = static_cast<char *>(buffer);
+			do {
+				CharsRead = readFile(match, charsToRead, file);
+				match = static_cast<char *>(buffer);
+				lastmatch = static_cast<char *>(buffer);
+				while ((match = strstr((match), ",")) != 0) {
+					strncpy(match, "\0", 1);
+					list->push(lastmatch);
+					lastmatch = match + 1;
+					match = match + 1;
 				}
-				if ((match + i) == static_cast<char *>(buffer)) {
-					list->push(match + i);
+				if (CharsRead == charsToRead) {
+					unsigned int i = 0;
+					while (lastmatch[i]) {
+						static_cast<char *>(buffer)[i] = lastmatch[i];
+						i++;
+					}
+					match = static_cast<char *>(buffer) + i;
+					lastmatch = static_cast<char *>(buffer) + i;
+					charsToRead = 128 - i;
 				}
 				else {
-					list->push(match + (i + 1));
+					remainingFileToread = false;
 				}
-
-				i = -1;
-			}
+			} while (remainingFileToread);
+			list->push(lastmatch);
 			free(buffer);
 		}
 	}

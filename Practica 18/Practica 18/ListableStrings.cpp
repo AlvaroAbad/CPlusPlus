@@ -1,6 +1,8 @@
 #pragma warning(disable:4514)
 #pragma warning(disable:4710)
 #include "ListableStrings.h"
+#include <stdlib.h>
+#include <string>
 
 ListableStrings::ListableStrings()
 {

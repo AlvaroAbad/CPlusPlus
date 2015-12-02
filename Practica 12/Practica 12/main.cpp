@@ -1,3 +1,13 @@
+// TOMAS: Muy bien la práctica.
+// TOMAS: En la implementación del constructor de copia estás realizando llamadas
+//        a la función "push" de la lista que aún no se ha terminado de construir.
+//        En tu implementación esto no es problemático pero...
+//        ¿Se te ocurre algún caso en el que esto pueda resultar peligroso?
+//        Pista: piensa que puede pasar si la función "push" fuera virtual y a alguien se le ocurriera
+//        derivar de la clase TList y sobrescribir el método "push".
+// TOMAS: Piensa si no sería más interesante que la clase "TListNode" estuviera dentro
+//        de la clase TList.
+
 #pragma warning(disable: 4710)//printf function not inline
 #include<stdio.h>
 #include "LinkList.h"

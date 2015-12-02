@@ -1,6 +1,8 @@
 #pragma warning(disable:4514)
 #pragma warning(disable:4710)
 #include "LinkList.h"
+#include <stdlib.h>
+#include <string>
 
 TList::TList()
 {

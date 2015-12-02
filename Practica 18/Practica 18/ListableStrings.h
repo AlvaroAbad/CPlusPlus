@@ -1,8 +1,7 @@
 #pragma once
 #pragma warning(disable: 4996)
 #include "Node.h"
-#include <stdlib.h>
-#include <string>
+
 class ListableStrings:public ListableInterface {
 public:
 	ListableStrings();

@@ -1,3 +1,13 @@
+// TOMAS: Muy bien la práctica.
+// TOMAS: Los warinigs "C4626" y "C5027" se producen como consecuencia de las declarciones de constantes no estáticas dentro de las clases.
+//        El copilador interpreta que, al ser no estáticas, tienen que tratarse somo variables miembro que no pueden ser modififcadas.
+//        Al no poder modificarse no se pueden aplicar los operadores de asignación por defecto (estos al realizar la copia estarian escribiendo
+//        en las variables declaradas como ctes al hacer la copia binaria). Una cte.no se puede volver a escribir aunque sea con el mismo valor.
+//        Conceptualmente las constantes que tu necesitas son estáticas...
+//        Si quieres alguna aclaración más dimeló.
+// ALVARO: Lo he entendido gracias no me acordaba y se me pasaba por alto cadavez que repasaba los miembros de la clase base que habia dos variables constantes.
+//		   Las he puesto estaticas. y ya no salta el warning.
+
 #pragma warning(disable: 4820) //warning in various external files
 #pragma warning(disable: 4548) //warning in malloc.h
 #pragma warning(disable: 4668) // warning in processthreadsapi.h

@@ -1,3 +1,7 @@
+// TOMAS: Muy bien la práctica.
+// TOMAS: Piensa en que caso hubiera sido interesante meter el enumerado "TType" dentro de 
+//        la clase "CImagen".
+
 #pragma warning(disable:4514)
 #pragma warning(disable:4710)
 #include "Jpg.h"

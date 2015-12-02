@@ -16,8 +16,8 @@ class SpaceShip
 public:
 	enum alignment { Empire, Rebels };
 protected:
-	const short int MAX_WIDTH = 60;
-	const short int MAX_HEIGHT = 60;
+	static const short int MAX_WIDTH = 60;
+	static const short int MAX_HEIGHT = 60;
 	int serialnumber;
 	unsigned char serialchar;
 	short int posX; // Hrozontal position in screen
@@ -40,7 +40,7 @@ public:
 	short int getPosY() { return this->posY; }
 	unsigned short int getLife() { return this->life; }
 	//OPERATORS
-	const bool &operator !=(const SpaceShip * const  obj) {
+	const bool &operator !=(const SpaceShip * const  obj) const {
 		if (this->serialchar == obj->serialchar && this->serialnumber == obj->serialnumber) {
 			return true;
 		}

@@ -1,3 +1,8 @@
+// TOMAS: Muy bien la práctica.
+// TOMAS: los "static_cast<void*>" en los "write" no son necesarios ya que cuando un parámetro se 
+//        declra de tipo "void *" se está indicando que se le puede pasar cualquier puntero.
+// ALVARO: eliminados los "static_cast<void*>".
+
 #pragma warning(disable:4514)
 #pragma warning(disable:4710)
 #include "FileStream.h"
@@ -16,7 +21,7 @@ int main(int, char*) {
 	printf("\n");
 	fileStream->read(readBuffer, 20);
 	printf("\n");
-	fileStream->write(static_cast<void*>(writeBuffer), 18);
+	fileStream->write(writeBuffer, 18);
 	printf("\n");
 	fileStream->close();
 	printf("\n");
@@ -25,7 +30,7 @@ int main(int, char*) {
 	printf("\n");
 	comStream->read(readBuffer, 20);
 	printf("\n");
-	comStream->write(static_cast<void*>(writeBuffer), 18);
+	comStream->write(writeBuffer, 18);
 	printf("\n");
 	comStream->close();
 	printf("\n");
@@ -34,7 +39,7 @@ int main(int, char*) {
 	printf("\n");
 	TCPStream->read(readBuffer, 20);
 	printf("\n");
-	TCPStream->write(static_cast<void*>(writeBuffer), 18);
+	TCPStream->write(writeBuffer, 18);
 	printf("\n");
 	TCPStream->close();
 	printf("\n");
